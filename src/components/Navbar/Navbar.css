@@ -1,0 +1,53 @@
+nav {
+  padding: 10px 20px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  gap: 20px;
+}
+
+.nav-left .menu-icon {
+  width: 25px;
+}
+
+.nav-left .logo {
+  width: 120px;
+}
+
+.nav-middle {
+  width: 45%;
+  background: #f0f0f0;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+.nav-middle input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+}
+
+.nav-middle img {
+  width: 20px;
+}
+
+.nav-right {
+  gap: 20px;
+}
+
+.nav-right img {
+  width: 22px;
+}
+
+.nav-right .user-icon {
+  width: 35px;
+  border-radius: 50%;
+}
