@@ -10,6 +10,7 @@ const Home = ({ sidebar }) => {
       <Sidebar sidebar={sidebar} />
       <div className={`container ${sidebar ? "" : "large-container"}`}>
         <CategoryFilter />
+
         <Feed />
       </div>
     </>
