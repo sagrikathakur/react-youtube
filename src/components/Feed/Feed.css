@@ -1,67 +1,66 @@
 .feed {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 20px 0;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 16px;
+  row-gap: 40px;
+  padding: 24px 0;
 }
 
 .video-card {
   display: block;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-decoration: none;
   color: inherit;
-}
-
-.video-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  cursor: pointer;
 }
 
 .thumbnail-container {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+  border-radius: 12px;
   overflow: hidden;
+  margin-bottom: 12px;
+  transition: border-radius 0.2s ease;
+}
+
+.video-card:hover .thumbnail-container {
+  border-radius: 0;
 }
 
 .thumbnail {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.video-card:hover .thumbnail {
-  transform: scale(1.05);
 }
 
 .duration {
   position: absolute;
   bottom: 8px;
   right: 8px;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   font-size: 12px;
   font-weight: 500;
-  padding: 3px 6px;
+  padding: 3px 4px;
   border-radius: 4px;
+  line-height: 1;
 }
 
 .video-info {
   display: flex;
   gap: 12px;
-  padding: 12px;
+  align-items: flex-start;
+  padding-right: 24px;
 }
 
 .channel-icon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .video-details {
@@ -70,11 +69,12 @@
 }
 
 .video-title {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   color: #0f0f0f;
-  line-height: 1.4;
-  margin-bottom: 6px;
+  line-height: 2.2rem;
+  line-height: 1.4; /* Override */
+  margin-bottom: 4px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -82,10 +82,11 @@
 }
 
 .channel-name {
-  font-size: 13px;
+  font-size: 14px;
   color: #606060;
   margin-bottom: 2px;
-  transition: color 0.2s;
+  display: flex;
+  align-items: center;
 }
 
 .channel-name:hover {
@@ -93,20 +94,25 @@
 }
 
 .video-meta {
-  font-size: 12px;
+  font-size: 14px;
   color: #606060;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .feed {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 16px;
+    row-gap: 32px;
   }
 }
 
 @media (max-width: 480px) {
   .feed {
     grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+  .thumbnail-container {
+    border-radius: 0;
   }
 }
